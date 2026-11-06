@@ -107,6 +107,7 @@ body {
 
 /* ---------- page ---------- */
 .book-main {
+  margin-left: var(--nav-w);
   padding: 2rem 2.5rem 5rem;
 }
 
@@ -216,7 +217,6 @@ code {
     border-bottom: 1px solid var(--rule);
     padding: 1.3rem 1.2rem;
   }
-  .book-body { margin-left: 0; }
-  .book-main { padding: 1.8rem 1.2rem 4rem; }
+  .book-main { margin-left: 0; padding: 1.8rem 1.2rem 4rem; }
   h1 { font-size: 1.45rem; }
 }
