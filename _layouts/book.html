@@ -39,9 +39,20 @@
   {% endfor %}
   <p class="nav-foot">
     <a href="{{ '/feed.xml' | relative_url }}" hidden></a>
-    Hosted by the Department of Psychology and Behavioral Sciences, Zhejiang University
+    Department of Psychology and Behavioral Sciences, Zhejiang University
+    <a class="nav-back" href="https://consciousness-observers.github.io/projects/concepts-approaches-psychology/">CO-LAB 读书会主页 →</a>
   </p>
 </nav>
+
+<div class="book-body">
+<header class="book-header">
+  <span class="crumb">{{ page.title | default: site.title }}</span>
+  <div class="font-ctl" role="group" aria-label="Reading size">
+    <button type="button" data-size="down" aria-label="Smaller text">A−</button>
+    <button type="button" data-size="reset" aria-label="Default text size">A</button>
+    <button type="button" data-size="up" aria-label="Larger text">A+</button>
+  </div>
+</header>
 
 <main class="book-main">
   <article class="book-page">
@@ -53,6 +64,8 @@
     {% if next_url %}<a class="pager-next" href="{{ next_url | relative_url }}">{{ next_title }} →</a>{% endif %}
   </footer>
 </main>
+</div>
 
+<script src="{{ '/assets/js/book.js' | relative_url }}"></script>
 </body>
 </html>
