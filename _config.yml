@@ -1,0 +1,21 @@
+title: 心理学概念与途径
+subtitle: Concepts and Approaches in Psychology
+description: >-
+  A reading group at the Department of Psychology and Behavioral Sciences, Zhejiang
+  University. One concept per session, back to the original papers.
+url: https://consciousness-observers.github.io
+baseurl: /concepts-and-approaches
+lang: zh-CN
+
+author: Zihao Wang
+email: psychwangzihao@zju.edu.cn
+
+markdown: kramdown
+kramdown:
+  input: GFM
+  hard_wrap: false
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md

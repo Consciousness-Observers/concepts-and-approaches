@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{% if page.title %}{{ page.title }} · {% endif %}{{ site.title }}</title>
+{% if page.description %}<meta name="description" content="{{ page.description }}">{% endif %}
+<link rel="stylesheet" href="{{ '/assets/css/book.css' | relative_url }}">
+</head>
+<body>
+
+{%- assign prev_title = nil -%}{%- assign prev_url = nil -%}
+{%- assign next_title = nil -%}{%- assign found = false -%}
+{%- for part in site.data.toc -%}
+  {%- for ch in part.chapters -%}
+    {%- if found and next_title == nil -%}
+      {%- assign next_title = ch.title -%}{%- assign next_url = ch.url -%}
+    {%- endif -%}
+    {%- if ch.url == page.url -%}
+      {%- assign found = true -%}
+    {%- elsif found == false -%}
+      {%- assign prev_title = ch.title -%}{%- assign prev_url = ch.url -%}
+    {%- endif -%}
+  {%- endfor -%}
+{%- endfor -%}
+
+<nav class="book-nav" aria-label="目录">
+  <a class="book-title" href="{{ '/' | relative_url }}">心理学概念与途径<small>Concepts and Approaches in Psychology</small></a>
+  {% for part in site.data.toc %}
+    <p class="nav-part">{{ part.part }}</p>
+    <ul>
+      {% for ch in part.chapters %}
+        <li><a href="{{ ch.url | relative_url }}"{% if ch.url == page.url %} class="is-current" aria-current="page"{% endif %}>{{ ch.title }}</a></li>
+      {% endfor %}
+      {% if part.chapters.size == 0 %}
+        <li class="nav-empty">（随讨论增补）</li>
+      {% endif %}
+    </ul>
+  {% endfor %}
+  <p class="nav-foot">
+    <a href="{{ '/feed.xml' | relative_url }}" hidden></a>
+    Hosted by the Department of Psychology and Behavioral Sciences, Zhejiang University
+  </p>
+</nav>
+
+<main class="book-main">
+  <article class="book-page">
+    {{ content }}
+  </article>
+
+  <footer class="book-pager">
+    {% if prev_url %}<a class="pager-prev" href="{{ prev_url | relative_url }}">← {{ prev_title }}</a>{% else %}<span></span>{% endif %}
+    {% if next_url %}<a class="pager-next" href="{{ next_url | relative_url }}">{{ next_title }} →</a>{% endif %}
+  </footer>
+</main>
+
+</body>
+</html>

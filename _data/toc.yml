@@ -1,0 +1,9 @@
+# The book's table of contents. Order is the order of the list.
+# Each entry: title, url, and optionally a `part` label and `draft: true`.
+- part: 卷首
+  chapters:
+    - title: 序
+      url: /
+
+- part: 讨论记录
+  chapters: []
