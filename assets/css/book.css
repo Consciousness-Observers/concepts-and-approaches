@@ -5,13 +5,12 @@
   --paper: #ffffff;
   --accent: #2a6ebb;
   --nav-w: 17rem;
-  --reading-size: 17px;
   --max: 46rem;
 }
 
 * { box-sizing: border-box; }
 
-html { font-size: var(--reading-size); }
+html { font-size: 17px; }
 
 body {
   margin: 0;
@@ -84,11 +83,16 @@ body {
 
 .nav-foot {
   margin-top: 2.2rem;
-  padding-top: .9rem;
+  padding-top: 1rem;
   border-top: 1px solid var(--rule);
-  color: var(--muted);
-  font-size: 0.7rem;
-  line-height: 1.6;
+}
+
+.nav-logo {
+  display: block;
+  width: 100%;
+  max-width: 13rem;
+  height: auto;
+  margin-bottom: .9rem;
 }
 
 .nav-back {
@@ -101,44 +105,9 @@ body {
 
 .nav-back:hover { text-decoration: underline; }
 
-/* ---------- header bar ---------- */
-.book-body { margin-left: var(--nav-w); }
-
-.book-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
-  padding: .55rem 2.5rem;
-  border-bottom: 1px solid var(--rule);
-  font-size: .76rem;
-  color: var(--muted);
-  position: sticky;
-  top: 0;
-  background: rgba(255, 255, 255, .96);
-  backdrop-filter: blur(3px);
-  z-index: 5;
-}
-
-.font-ctl { display: flex; align-items: center; gap: .1rem; }
-
-.font-ctl button {
-  font: inherit;
-  line-height: 1;
-  padding: .25rem .45rem;
-  border: 1px solid transparent;
-  border-radius: 4px;
-  background: transparent;
-  color: var(--muted);
-  cursor: pointer;
-}
-
-.font-ctl button:hover { border-color: var(--rule); color: var(--ink); }
-.font-ctl .is-label { cursor: default; font-size: .72rem; letter-spacing: .04em; }
-
 /* ---------- page ---------- */
 .book-main {
-  padding: 2.6rem 2.5rem 5rem;
+  padding: 2rem 2.5rem 5rem;
 }
 
 .book-page { max-width: var(--max); }
@@ -189,14 +158,6 @@ code {
 
 /* ---------- cover ---------- */
 .cover { margin-bottom: 3rem; }
-
-.cover-kicker {
-  font-size: .72rem;
-  letter-spacing: .16em;
-  text-transform: uppercase;
-  color: var(--muted);
-  margin-bottom: 1.1rem;
-}
 
 .cover h1 { margin-bottom: .5rem; }
 
@@ -256,7 +217,6 @@ code {
     padding: 1.3rem 1.2rem;
   }
   .book-body { margin-left: 0; }
-  .book-header { padding: .5rem 1.2rem; }
   .book-main { padding: 1.8rem 1.2rem 4rem; }
   h1 { font-size: 1.45rem; }
 }

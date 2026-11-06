@@ -6,7 +6,6 @@ description: 心之所求，求索之心 ——写在「心理学概念与途径
 ---
 
 <div class="cover">
-  <p class="cover-kicker">Reading Group · 读书会</p>
   <h1>心之所求，求索之心</h1>
   <p class="cover-sub">——写在「心理学概念与途径」读书会之前</p>
   <p class="cover-author">王梓豪</p>
