@@ -154,8 +154,15 @@ img { max-width: 100%; height: auto; }
 .cover-sub {
   font-size: 1rem;
   color: var(--muted);
-  margin-bottom: 1.6rem;
+  margin-bottom: .9rem;
   letter-spacing: .04em;
+}
+
+.cover-author {
+  font-size: .98rem;
+  letter-spacing: .18em;
+  color: var(--ink);
+  margin-bottom: 2.4rem;
 }
 
 /* ---------- verse ---------- */
